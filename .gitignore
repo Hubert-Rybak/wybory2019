@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+Data/
+/Gminy.zip*
+/Powiaty.zip*
+/wyniki_gl_na_listy_po_gminach_sejm_csv.zip*
