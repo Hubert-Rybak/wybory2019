@@ -11,6 +11,7 @@ RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager keplergl-ju
 RUN echo ${HOME}
 COPY . ${HOME}
 
+USER root
 RUN fix-permissions ${HOME}
 
 USER jovyan
