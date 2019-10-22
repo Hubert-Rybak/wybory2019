@@ -8,13 +8,10 @@ RUN pip install keplergl
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager keplergl-jupyter
 
 # Make sure the contents of our repo are in ${HOME}
-COPY Gminy_Geo.json ${HOME}
-COPY wyniki_gl_na_listy_po_gminach_sejm.csv ${HOME}
-COPY Wybory2019.ipynb ${HOME}
+RUN echo ${HOME}
+COPY . ${HOME}
 
-USER root
-RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
+RUN fix-permissions ${HOME}
 
 USER jovyan
-WORKDIR /home/jovyan/work
+WORKDIR ${HOME}
